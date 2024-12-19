@@ -76,6 +76,8 @@ class UsuarioController {
                 res.redirect("/usuarios/login");  
             }
         }
+        
+
     }
 
     static logout(req, res){

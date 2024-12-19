@@ -22,17 +22,17 @@ app.use(vooRoutes);
 const usuarioRoutes = require("./routes/usuarioRoutes");
 app.use(usuarioRoutes);
 
-app.use("/", function (req, res) {
-  if (req.session.usuario) {
+/*app.use("/", function (req, res) {
+  if (req.session.email) {
     res.render("index");
   } else {
     res.redirect("/usuarios/login");
   }
-});
-
-/*app.get("/", function (req, res) {
-  res.render("index");
 });*/
+
+app.get("/", function (req, res) {
+  res.render("index");
+});
 
 app.use(function (req, res) {
   res.status(404).render("404");
@@ -42,7 +42,7 @@ app.use(
   session({
     secret: "ifpe",
     saveUninitialized: true,
-    resave: true,
+    resave: false,
   })
 );
 

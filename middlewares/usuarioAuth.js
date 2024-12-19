@@ -1,8 +1,8 @@
 function auth(req, res, next){
-    if(req.session.usuario){   
+    if(req.session.email){   
     next();    
     } else{
-    res.redirect("/usuario/login");   
+    res.redirect("/usuarios/login");   
     }  
 }
     
