@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuário</title>
+</head>
+<body>
+    <div class="container">
+        <%- include("../partials/cabecalho_semmenu.ejs") %>
+        <form action="/usuarios" method="post">
+            <input type="hidden" name="_id" value="<%= usuario._id %>">
+            nome: <input value="<%= usuario.nome%>" type="text" name="nome" required>
+            email: <input value="<%= usuario.email%>" type="email" name="email" required>
+            senha: <input type="text" name="senha" required>
+            <input type="submit" value="Salvar">
+        </form> 
+        <a href="/usuarios/login"> Já possui cadastro? </a>
+    </div>
+    <%- include("../partials/rodape.ejs") %> 
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Voo</title>
+</head>
+<body>
+    <div class="container">
+        <%- include("../partials/cabecalho.ejs") %>
+        <form action="/voos" method="post">
+            <input type="hidden" name="_id" value="<%= voo._id %>">
+            Número do Voo: <input value="<%= voo.numerovoo %>" type="text" name="numerovoo" required>
+            Trajeto: <input value="<%= voo.trajeto %>" type="text" name="trajeto" required>
+            Partida: <input value="<%= voo.partida %>" type="datetime-local" name="partida" required>
+            <input type="submit" value="Salvar">
+        </form>
+        <%- include("../partials/rodape.ejs") %>   
+    </div>
+</body>
+</html>

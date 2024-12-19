@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastrar Passageiro</title>
+  </head>
+  <body>
+    <div class="container">
+      <%- include("../partials/cabecalho.ejs") %>
+      <form action="/passageiros" method="post">
+        <br />
+        <h4>Cadastro de Passageiros</h4>
+        <div class="form-row">
+         
+          <input
+            type="hidden"
+            name="_id"
+            value="<%= passageiro._id %>"
+            class="form-control"
+          />
+          <label for="inputCpf">CPF</label>
+          <input
+            value="<%= passageiro.cpf %>"
+            type="text"
+            name="cpf"
+            required
+            class="form-control"
+          />
+          <label for="inputCpf">Nome</label>
+          <input
+            value="<%= passageiro.nome %>"
+            type="text"
+            name="nome"
+            required
+            class="form-control"
+          />
+          <label for="inputCpf">Assento</label>
+          <input
+            value="<%= passageiro.assento %>"
+            type="text"
+            name="assento"
+            required
+            class="form-control"
+          />
+          <br />
+          <input type="submit" value="Salvar" class="btn btn-primary" />
+        </div>
+      </form>
+      <%- include("../partials/rodape.ejs") %>
+    </div>
+  </body>
+</html>

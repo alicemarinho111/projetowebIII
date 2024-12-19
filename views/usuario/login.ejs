@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuário</title>
+</head>
+<body>
+    <div class="container">
+        <% if(status == "1") {%>
+            <div class="alert alert-danger alert-dismissible">
+                <button class="btn-close" data-bs-dismiss="alert"></button>
+                E-mail e/ou senha inválido(s)!
+            </div>
+        
+         <% } %>
+         <%- include("..//partials/cabecalho_semmenu.ejs") %>
+        <form action="/usuarios/login" method="post">
+            Email: <input type="text" name="email" required>
+            Senha: <input type="text" name="senha" required>
+            <input type="submit" value="Logar">
+    
+        </form> 
+        <a href="/usuarios/cadastrar"> Cadastre-se aqui</a>
+    </div>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>

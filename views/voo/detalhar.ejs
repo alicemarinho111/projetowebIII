@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhar Voo</title>
+</head>
+<body>
+    <%- include("../partials/cabecalho.ejs") %>
+    <div>
+        <b>Número do Voo:</b><%= voo.numerovoo %>
+    </div>
+    <div>
+        <b>Trajeto:</b><%= voo.trajeto %>
+    </div>
+    <div>
+        <b>Partida:</b><%= voo.partida %>
+    </div>
+    <div>
+        <a href="/voos">Voltar para listagem</a>
+    </div>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>

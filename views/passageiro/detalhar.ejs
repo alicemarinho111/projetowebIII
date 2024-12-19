@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhar Passageiro</title>
+</head>
+<body>
+    <%- include("../partials/cabecalho.ejs") %>
+    <div>
+        <b>CPF:</b><%= passageiro.cpf %>
+    </div>
+    <div>
+        <b>Nome:</b><%= passageiro.nome %>
+    </div>
+    <div>
+        <b>Assento:</b><%= passageiro.assento %>
+    </div>
+    <div>
+        <a href="/passageiros">Voltar para listagem</a>
+    </div>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>
