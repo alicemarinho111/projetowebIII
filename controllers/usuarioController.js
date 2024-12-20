@@ -59,7 +59,8 @@ class UsuarioController {
 
   
     static loginGet(req, res) {
-        res.render("usuarios/login");
+        const status = req.query.s || null;
+        res.render("usuarios/login", { status });
     }
 
 
@@ -67,13 +68,14 @@ class UsuarioController {
         const usuario = await UsuarioModel.findOne({
             email: req.body.email  
         });  
-        if (usuario == null) {
-            res.redirect("/usuarios/login");  
+        if (!usuario) {
+            return res.redirect("/usuarios/login?s=1");  
         } else {
             if (bcryptjs.compareSync(req.body.senha, usuario.senha)) {
+                req.session.email = usuario.email;
                 res.redirect("/");  
             } else {
-                res.redirect("/usuarios/login");  
+                res.redirect("/usuarios/login?s=1");  
             }
         }
         
@@ -81,7 +83,7 @@ class UsuarioController {
     }
 
     static logout(req, res){
-        req.session.usuario = null;
+        req.session.email = null;
         req.redirect("/usuarios/login");
     }
 }
