@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastrar Passageiro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+        }
+
+        .btn-submit {
+            width: 100%;
+        }
+
+        .btn-back {
+            margin-top: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <%- include("../partials/cabecalho.ejs") %>
+
+    <div class="container">
+      <h1>Cadastrar Passageiro</h1>
+      <form action="/passageiros" method="post">
+        <input type="hidden" name="_id" value="<%= passageiro._id %>">
+
+        <div class="mb-3">
+          <label for="cpf" class="form-label">CPF</label>
+          <input 
+            value="<%= passageiro.cpf %>" 
+            type="text" 
+            name="cpf" 
+            required 
+            class="form-control" 
+            id="cpf"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input 
+            value="<%= passageiro.nome %>" 
+            type="text" 
+            name="nome" 
+            required 
+            class="form-control" 
+            id="nome"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="assento" class="form-label">Assento</label>
+          <input 
+            value="<%= passageiro.assento %>" 
+            type="text" 
+            name="assento" 
+            required 
+            class="form-control" 
+            id="assento"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit">Salvar</button>
+      </form>
+
+      <div class="text-center btn-back">
+        <a href="/passageiros" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i> Voltar para Listagem
+        </a>
+      </div>
+    </div>
+
+    <%- include("../partials/rodape.ejs") %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
