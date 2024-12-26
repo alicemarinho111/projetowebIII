@@ -8,10 +8,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-<<<<<<< HEAD
-=======
   "description": "",
->>>>>>> 062ea15592da8532691077109f168ca4bad070df
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.7",
@@ -19,10 +16,5 @@
     "express": "^4.21.2",
     "express-session": "^1.18.1",
     "mongoose": "^8.9.2"
-<<<<<<< HEAD
-  },
-  "description": ""
-=======
   }
->>>>>>> 062ea15592da8532691077109f168ca4bad070df
 }
