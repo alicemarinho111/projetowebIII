@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,4 +34,27 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhar Passageiro</title>
+</head>
+<body>
+    <%- include("../partials/cabecalho.ejs") %>
+    <div>
+        <b>CPF:</b><%= passageiro.cpf %>
+    </div>
+    <div>
+        <b>Nome:</b><%= passageiro.nome %>
+    </div>
+    <div>
+        <b>Assento:</b><%= passageiro.assento %>
+    </div>
+    <div>
+        <a href="/passageiros">Voltar para listagem</a>
+    </div>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+>>>>>>> 062ea15592da8532691077109f168ca4bad070df
 </html>
