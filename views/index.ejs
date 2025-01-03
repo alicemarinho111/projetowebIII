@@ -8,18 +8,52 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <!-- <div class="container">
-        <div class="section">
-            <h2>Passageiros</h2>
-            <a href="/passageiros/cadastrar">Cadastrar Passageiro</a> / 
-            <a href="/passageiros">Listagem de Passageiros</a>
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Bem-vindo(a) à Aero A's</h1>
+            <p class="lead">Gerencie seus passageiros, voos e usuários com facilidade.</p>
+            <a href="/voos" class="btn btn-light btn-lg mt-3">Explorar Voos</a>
         </div>
-        <div class="section">
-            <h2>Voos</h2>
-            <a href="/voos/cadastrar">Cadastrar Voo</a> / 
-            <a href="/voos">Listagem de Voos</a>
+    </header>
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <h5 class="card-title">Passageiros</h5>
+                            <p class="card-text">Cadastre e visualize informações de passageiros.</p>
+                            <a href="/passageiros" class="btn btn-primary">Listar Passageiros</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <h5 class="card-title">Voos</h5>
+                            <p class="card-text">Gerencie voos de forma rápida e eficiente.</p>
+                            <a href="/voos" class="btn btn-primary">Listar Voos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <h5 class="card-title">Usuários</h5>
+                            <p class="card-text">Controle o acesso dos usuários ao sistema.</p>
+                            <a href="/usuarios" class="btn btn-primary">Listar Usuários</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div> -->
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-pjqa9x3QHujcF2UJS04sw4RGoyXB7Jje1rkA0UV87tuHlwxfsfsKjj9HEr2gbrd6" crossorigin="anonymous"></script>
     <%- include("partials/rodape.ejs") %>
+
+    <footer class="text-center py-4">
+        <p>Developed by Alice e Alícia (A's)</p>
+    </footer>
 </body>
 </html>

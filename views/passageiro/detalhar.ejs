@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detalhar Passageiro</title>
-</head>
-<body>
-    <%- include("../partials/cabecalho.ejs") %>
-    <div>
-        <b>CPF:</b><%= passageiro.cpf %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container mt-5">
+      <%- include("../partials/cabecalho.ejs") %>
+
+      <div class="card">
+        <div class="card-header">
+          <h4>Detalhes do Passageiro</h4>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <b>CPF:</b> <%= passageiro.cpf %>
+          </div>
+          <div class="mb-3">
+            <b>Nome:</b> <%= passageiro.nome %>
+          </div>
+          <div class="mb-3">
+            <b>Assento:</b> <%= passageiro.assento %>
+          </div>
+          <a href="/passageiros" class="btn btn-secondary">Voltar para listagem</a>
+        </div>
+      </div>
+
+      <%- include("../partials/rodape.ejs") %>
     </div>
-    <div>
-        <b>Nome:</b><%= passageiro.nome %>
-    </div>
-    <div>
-        <b>Assento:</b><%= passageiro.assento %>
-    </div>
-    <div>
-        <a href="/passageiros">Voltar para listagem</a>
-    </div>
-    <%- include("../partials/rodape.ejs") %>
-</body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

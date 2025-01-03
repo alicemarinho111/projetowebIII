@@ -4,19 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Usuário</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <%- include("../partials/cabecalho_semmenu.ejs") %>
-        <form action="/usuarios" method="post">
-            <input type="hidden" name="_id" value="<%= usuario._id %>">
-            nome: <input value="<%= usuario.nome%>" type="text" name="nome" required>
-            email: <input value="<%= usuario.email%>" type="email" name="email" required>
-            senha: <input type="text" name="senha" required>
-            <input type="submit" value="Salvar">
-        </form> 
-        <a href="/usuarios/login"> Já possui cadastro? </a>
+<body class="bg-light">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card p-4 shadow-lg" style="width: 100%; max-width: 500px;">
+            <h3 class="text-center mb-4">Cadastrar Usuário</h3>
+            <% if (status === "1") { %>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <b>E-mail já está em uso!</b>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <% } %>
+            <form action="/usuarios" method="post">
+                <input type="hidden" name="_id" value="<%= usuario._id || "" %>">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" name="nome" id="nome" class="form-control" value="<%= usuario.nome || "" %>" placeholder="Digite seu nome" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" name="email" id="email" class="form-control" value="<%= usuario.email || "" %>" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="mb-3">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="password" name="senha" id="senha" class="form-control" placeholder="Digite sua senha" required>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </div>
+            </form>
+            <div class="text-center mt-3">
+                <a href="/usuarios/login" class="text-decoration-none">Já possui cadastro?</a>
+            </div>
+        </div>
     </div>
-    <%- include("../partials/rodape.ejs") %> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

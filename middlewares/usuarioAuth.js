@@ -1,9 +1,9 @@
-function auth(req, res, next){
-    if(req.session.email){   
-    next();    
-    } else{
-    res.redirect("/usuarios/login");   
-    }  
+function auth (req, res, next){
+    if (req.session.usuario){
+        next(); 
+    } else {
+        res.redirect("/usuarios/login");
+    }
 }
-    
+
 module.exports = auth;

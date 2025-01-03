@@ -6,11 +6,22 @@ const mongoose = require("mongoose");
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+
 require("dotenv/config");
+
+// Conexão com o MongoDB usando variável de ambiente
 mongoose.connect(process.env.MONGO_URI);
 
-mongoose.connect(
-  "mongodb+srv://mams3:D5R77BVcvRAnY3kv@cluster0.zidra.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+ mongoose.connect(
+   "mongodb+srv://mams3:D5R77BVcvRAnY3kv@cluster0.zidra.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+ );
+
+app.use(
+  session({
+    secret: "ifpe",
+    saveUninitialized: false,
+    resave: false,
+  })
 );
 
 const passageiroRoutes = require("./routes/passageiroRoutes");
@@ -22,16 +33,8 @@ app.use(vooRoutes);
 const usuarioRoutes = require("./routes/usuarioRoutes");
 app.use(usuarioRoutes);
 
-app.use(
-  session({
-    secret: "ifpe",
-    saveUninitialized: true,
-    resave: false,
-  })
-);
-
 app.get("/", function (req, res) {
-  if (req.session.email) {
+  if (req.session.usuario) {
     res.render("index");
   } else {
     res.redirect("/usuarios/login");
@@ -40,10 +43,6 @@ app.get("/", function (req, res) {
 
 app.get("/usuarios/cadastrar", (req, res) => {
   res.render("usuario/cadastrar");
-});
-
-app.get("/", function (req, res) {
-  res.render("index");
 });
 
 app.use(function (req, res) {

@@ -8,6 +8,7 @@ routes.post("/passageiros", passageiroController.cadastrarPost);
 routes.get("/passageiros/cadastrar/:cpf?", passageiroController.cadastrarGet);
 routes.get("/passageiros/:cpf", passageiroController.detalhar);
 routes.get("/passageiros/remover/:cpf", passageiroController.remover);
-//routes.get("/passageiros/atualizar/:cpf", passageiroController.atualizar);
+// routes.get("/passageiros/atualizar/:cpf", passageiroController.atualizar);
+
 
 module.exports = routes;
