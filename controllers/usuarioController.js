@@ -1,9 +1,10 @@
 const bcryptjs = require("bcryptjs");
 const UsuarioModel = require("../models/UsuarioModel");
 
-class UsuarioController{
+class UsuarioController {
 
-    static async listar(req, res){
+    
+    static async listar(req, res) {
         const status = req.query.s;
         const usuarios = await UsuarioModel.find();
         res.render("usuarios/listagem", {usuarios, status});
