@@ -82,6 +82,12 @@
             background-color: #e0a800;
             border-color: #d39e00;
         }
+
+        .btn-add {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: flex-end;
+        }
     </style>
 </head>
 <body>
@@ -109,6 +115,14 @@
         <% } %>
 
         <h1>Listagem de Voos</h1>
+
+        <div class="btn-add">
+            <a href="/voos/cadastrar">
+                <button type="button" class="btn btn-primary">
+                    <i class="bi bi-plus-lg"></i> Adicionar Voo
+                </button>
+            </a>
+        </div>
 
         <table class="table table-bordered table-striped">
             <thead>
